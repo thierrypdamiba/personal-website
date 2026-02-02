@@ -1,35 +1,27 @@
 import React from "react"
 import Image from "next/image"
 import { Lexend } from 'next/font/google'
-// import PageComponent from "../components/page" // Remove this unused import
-// import VisitedPlacesMap from "../components/VisitedPlacesMap" // Remove this unused import
 import Link from 'next/link'
 
-// Load Lexend font
-const lexend = Lexend({ 
+const lexend = Lexend({
   subsets: ['latin'],
   variable: '--font-lexend',
 })
 
 export default function HomePage() {
-  // Remove the events sorting and slicing, as we'll hardcode the latest event
-  // const eventsToShow = events
-  //   .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
-  //   .slice(-3); // Show the last 3 events
-
   return (
     <div className={`min-h-screen bg-white text-gray-800 p-8 ${lexend.variable} font-sans`}>
       <div className="bg-blue-600 text-white py-4 px-8 mb-8 rounded-lg shadow-md">
         <p className="text-center font-bold flex items-center justify-center">
           <span className="mr-2">⚡️</span>
-          Webinar: Building Agents with LlamaIndex &amp; Qdrant
-          <a href="https://lu.ma/45k4twld" className="ml-2 underline hover:text-blue-200" target="_blank" rel="noopener noreferrer">
+          Qdrant AI Builders: Show &amp; Tell @ AWS Loft
+          <a href="https://lu.ma/u5sgzulm" className="ml-2 underline hover:text-blue-200" target="_blank" rel="noopener noreferrer">
             Register now!
           </a>
           <span className="ml-2">⚡️</span>
         </p>
       </div>
-      
+
       <main className="max-w-2xl mx-auto">
         <header className="mb-8 text-center">
           <h1 className="text-3xl font-bold mb-2">Thierry Damiba</h1>
@@ -39,7 +31,7 @@ export default function HomePage() {
 
         <section className="mb-8 bg-blue-50 p-6 rounded-lg shadow-md border-l-4 border-blue-500">
           <h2 className="text-2xl font-bold mb-4 text-blue-700 underline">Me in 10 seconds</h2>
-          <p>I build communities for companies in the AI space.</p>
+          <p>I build communities at the intersection of AI, vector search, and intelligent systems.</p>
           <p>I&apos;ve been a stand up comedian, data scientist, teacher, and entrepreneur.</p>
           <p>Explorer at heart, fascinated by new perspectives.</p>
           <p>Always eager to embrace the unfamiliar.</p>
@@ -57,6 +49,52 @@ export default function HomePage() {
         </section>
 
         <section className="mb-8">
+          <h2 className="text-xl font-semibold mb-2 underline">What am I writing about?</h2>
+          <div className="space-y-4 mt-4">
+            <div className="border rounded-lg p-4 hover:shadow-md transition-shadow">
+              <h3 className="text-lg font-medium mb-1">
+                <a href="https://qdrant.tech/articles/agentic-builders-guide/" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">
+                  Building Performant, Scaled Agentic Vector Search with Qdrant
+                </a>
+              </h3>
+              <p className="text-gray-600 text-sm">How AI agents have grown from simple Q&amp;A chatbots into systems that independently plan, retrieve, act, and verify.</p>
+            </div>
+            <div className="border rounded-lg p-4 hover:shadow-md transition-shadow">
+              <h3 className="text-lg font-medium mb-1">
+                <a href="https://qdrant.tech/blog/mmr-diversity-aware-reranking/" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">
+                  Balancing Relevance and Diversity with MMR Search
+                </a>
+              </h3>
+              <p className="text-gray-600 text-sm">How Qdrant&apos;s native Maximum Marginal Relevance balances similar results with diverse results.</p>
+            </div>
+            <div className="border rounded-lg p-4 hover:shadow-md transition-shadow">
+              <h3 className="text-lg font-medium mb-1">
+                <a href="https://medium.com/qdrant/semantic-search-on-messy-documents-with-mistral-ocr-and-qdrant-e586c0d90f56" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">
+                  Semantic Search on Messy Documents with Mistral OCR and Qdrant
+                </a>
+              </h3>
+              <p className="text-gray-600 text-sm">Transforming scanned documents into a searchable knowledge base using Mistral OCR, Qdrant, and Fastembed.</p>
+            </div>
+            <div className="border rounded-lg p-4 hover:shadow-md transition-shadow">
+              <h3 className="text-lg font-medium mb-1">
+                <a href="https://medium.com/qdrant/better-search-results-with-mmr-for-diversity-aware-reranking-a94d01a1d13c" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">
+                  Better Vector Search with MMR for Diversity-Aware Reranking
+                </a>
+              </h3>
+              <p className="text-gray-600 text-sm">Exploring MMR through fashion search using the DeepFashion dataset to break the echo chamber of similar results.</p>
+            </div>
+            <div className="border rounded-lg p-4 hover:shadow-md transition-shadow">
+              <h3 className="text-lg font-medium mb-1">
+                <a href="https://qdrant.tech/blog/qdrant-relari/" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">
+                  Data-Driven RAG Evaluation: Testing Qdrant Apps with Relari AI
+                </a>
+              </h3>
+              <p className="text-gray-600 text-sm">An in-depth RAG evaluation process using Qdrant for retrieval and Relari for real-world performance assessment.</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="mb-8">
           <h2 className="text-xl font-semibold mb-2 underline">What did I do before?</h2>
           <p>Data Scientist for the Department of Homeland Security <Link href="/other-things" className="text-blue-600 hover:underline">among other things</Link>.</p>
         </section>
@@ -64,7 +102,7 @@ export default function HomePage() {
         <section className="mb-8">
           <h2 className="text-xl font-semibold mb-2 underline">Contact me</h2>
           <p>
-            <a href="https://twitter.com/your_twitter_handle" className="text-blue-600 hover:underline">Twitter</a> is where I am most responsive. You can also reach me via:
+            <a href="https://twitter.com/ptdamiba" className="text-blue-600 hover:underline">Twitter</a> is where I am most responsive. You can also reach me via:
           </p>
           <ul className="list-disc list-inside mt-2">
             <li>
@@ -78,35 +116,53 @@ export default function HomePage() {
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/thierrydamiba/" className="text-blue-600 hover:underline">
-                Instagram
+              <a href="https://github.com/thierrydamiba" className="text-blue-600 hover:underline">
+                GitHub
               </a>
             </li>
           </ul>
         </section>
 
         <section className="mb-8">
-          <h2 className="text-xl font-semibold mb-2 underline">What was your last event?</h2>
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-6 mt-4">
-            <div className="md:w-2/5">
-              <div className="relative w-full pt-[75%]">
-                <Image 
-                  src="/images/lam.avif" 
-                  alt="LlamaIndex Webinar"
-                  layout="fill"
-                  objectFit="contain"
-                  className="rounded-lg"
-                />
-              </div>
+          <h2 className="text-xl font-semibold mb-2 underline">Recent events</h2>
+          <div className="space-y-3 mt-4">
+            <div className="border rounded-lg p-4">
+              <span className="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded">Conference</span>
+              <h3 className="text-lg font-medium mt-2">ODSC AI West</h3>
+              <p className="text-gray-600 text-sm">Hands-on training: Powering AI with Vector Search</p>
             </div>
-            <div className="md:w-3/5">
-              <h3 className="text-lg font-medium mb-2">Webinar: Building Agents with LlamaIndex & Qdrant</h3>
-              <p className="text-gray-600 mb-2">September 26, 2024</p>
-              <p className="mb-2">Join us for an exciting webinar where we'll explore how to build powerful AI agents using LlamaIndex and Qdrant. Learn about the latest techniques in vector search and large language models.</p>
-              <a href="https://lu.ma/45k4twld" className="text-blue-600 hover:underline mr-4" target="_blank" rel="noopener noreferrer">Register now</a>
-              <Link href="/events" className="text-blue-600 hover:underline">See all my events</Link>
+            <div className="border rounded-lg p-4">
+              <span className="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded">Talk</span>
+              <h3 className="text-lg font-medium mt-2">AI Talks at Qlay (Qdrant + SambaNova)</h3>
+              <p className="text-gray-600 text-sm">The MiniCoil Sparse Retrieval Model</p>
             </div>
+            <div className="border rounded-lg p-4">
+              <span className="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded">Host</span>
+              <h3 className="text-lg font-medium mt-2">Qdrant AI Builders: Agentic RAG for Beginners</h3>
+              <p className="text-gray-600 text-sm">Welcome talk: The Future of Agentic AI @ AWS Loft, SF</p>
+            </div>
+            <div className="border rounded-lg p-4">
+              <span className="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded">Host</span>
+              <h3 className="text-lg font-medium mt-2">Qdrant AI Builders: Show &amp; Tell</h3>
+              <p className="text-gray-600 text-sm">Enterprise AI agents &amp; RAG @ AWS Loft, SF</p>
+            </div>
+            <div className="border rounded-lg p-4">
+              <span className="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded">Conference</span>
+              <h3 className="text-lg font-medium mt-2">Agents in Production Conference</h3>
+              <p className="text-gray-600 text-sm">AI agents at scale in production environments</p>
+            </div>
+            <a href="https://lu.ma/u5sgzulm" className="border rounded-lg p-4 block hover:shadow-md transition-shadow" target="_blank" rel="noopener noreferrer">
+              <span className="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded">Talk</span>
+              <h3 className="text-lg font-medium mt-2">A Data Driven Approach to Productionizing RAG Systems</h3>
+              <p className="text-gray-600 text-sm">Practical strategies for taking RAG from prototype to production</p>
+            </a>
+            <a href="https://www.ivoox.com/en/mission-critical-for-vector-databases-and-agentic-systems-audios-mp3_rf_145885868_1.html" className="border rounded-lg p-4 block hover:shadow-md transition-shadow" target="_blank" rel="noopener noreferrer">
+              <span className="text-xs font-medium text-pink-600 bg-pink-50 px-2 py-1 rounded">Podcast</span>
+              <h3 className="text-lg font-medium mt-2">AI Ketchup: Mission Critical for Vector Databases and Agentic Systems</h3>
+              <p className="text-gray-600 text-sm">Exploring the intersection of AI security, vector databases, and career transformation</p>
+            </a>
           </div>
+          <Link href="/events" className="text-blue-600 hover:underline mt-4 inline-block">See all my events</Link>
         </section>
 
         <section className="mb-8">
@@ -114,8 +170,8 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
             <a href="https://www.youtube.com/watch?v=BqnG_Ei35JE" className="flex flex-col items-center text-center group w-full max-w-sm mx-auto" target="_blank" rel="noopener noreferrer">
               <div className="w-full aspect-square relative mb-4 overflow-hidden rounded-lg flex items-center justify-center">
-                <Image 
-                  src="/images/c.jpeg" 
+                <Image
+                  src="/images/c.jpeg"
                   alt="Crumb - Locket"
                   layout="fill"
                   objectFit="cover"
@@ -128,8 +184,8 @@ export default function HomePage() {
             </a>
             <a href="https://www.amazon.com/Quantum-Magician-Derek-K%C3%BCnsken/dp/1781085706" className="flex flex-col items-center text-center group w-full max-w-sm mx-auto" target="_blank" rel="noopener noreferrer">
               <div className="w-full aspect-square relative mb-4 overflow-hidden rounded-lg flex items-center justify-center">
-                <Image 
-                  src="/images/q.jpg" 
+                <Image
+                  src="/images/q.jpg"
                   alt="The Quantum Magician book cover"
                   layout="fill"
                   objectFit="cover"
@@ -142,8 +198,8 @@ export default function HomePage() {
             </a>
             <a href="https://www.fxnetworks.com/shows/the-bear" className="flex flex-col items-center text-center group w-full max-w-sm mx-auto" target="_blank" rel="noopener noreferrer">
               <div className="w-full aspect-square relative mb-4 overflow-hidden rounded-lg flex items-center justify-center">
-                <Image 
-                  src="/images/b.png" 
+                <Image
+                  src="/images/b.png"
                   alt="The Bear TV show poster"
                   layout="fill"
                   objectFit="cover"
@@ -156,16 +212,16 @@ export default function HomePage() {
             </a>
             <a href="https://www.piccinorestaurant.com/" className="flex flex-col items-center text-center group w-full max-w-sm mx-auto" target="_blank" rel="noopener noreferrer">
               <div className="w-full aspect-square relative mb-4 overflow-hidden rounded-lg flex items-center justify-center">
-                <Image 
-                  src="/images/p.jpeg" 
-                  alt="Piccinos restaurant"
+                <Image
+                  src="/images/p.jpeg"
+                  alt="Piccino restaurant"
                   layout="fill"
                   objectFit="cover"
                   className="group-hover:scale-105 transition-transform duration-200"
                 />
               </div>
               <div>
-                <strong>Eating at:</strong> Piccinos in SF
+                <strong>Eating at:</strong> Piccino, SF
               </div>
             </a>
           </div>
@@ -186,38 +242,6 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-
-        {/* Remove the "Where in the world have I been?" section */}
-        {/* <section className="mb-8">
-          <h2 className="text-xl font-semibold mb-2 underline">Where in the world have I been?</h2>
-          <VisitedPlacesMap />
-        </section> */}
-
-        {/* Remove the Events section at the bottom */}
-        {/* <section className="mb-8">
-          <h2 className="text-xl font-semibold mb-2 underline">Events</h2>
-          {eventsToShow.map((event, index) => (
-            <div key={index} className="flex flex-col md:flex-row items-center md:items-start gap-6 mt-4">
-              <div className="md:w-2/5">
-                <div className="relative w-full pt-[75%]">
-                  <Image 
-                    src={`/images/${event.image}`} 
-                    alt={event.name}
-                    layout="fill"
-                    objectFit="contain"
-                    className="rounded-lg"
-                  />
-                </div>
-              </div>
-              <div className="md:w-3/5">
-                <h3 className="text-lg font-medium mb-2">{event.name}</h3>
-                <p className="text-gray-600 mb-2">{event.date}</p>
-                <p className="mb-2">{event.description}</p>
-                <Link href={`/events/${event.id}`} className="text-blue-600 hover:underline">See more</Link>
-              </div>
-            </div>
-          ))}
-        </section> */}
       </main>
     </div>
   )
